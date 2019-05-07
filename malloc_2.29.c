@@ -1548,8 +1548,8 @@ unlink_chunk (mstate av, mchunkptr p)
 
 /* Conservatively use 32 bits per map word, even if on 64bit system */
 #define BINMAPSHIFT      5
-#define BITSPERMAP       (1U << BINMAPSHIFT)
-#define BINMAPSIZE       (NBINS / BITSPERMAP)
+#define BITSPERMAP       (1U << BINMAPSHIFT)	//32
+#define BINMAPSIZE       (NBINS / BITSPERMAP)	//4
 
 #define idx2block(i)     ((i) >> BINMAPSHIFT)
 #define idx2bit(i)       ((1U << ((i) & ((1U << BINMAPSHIFT) - 1))))
